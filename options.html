@@ -1,0 +1,73 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+      input, label {
+          margin-top: 10px;
+          margin-bottom: 10px; 
+          display: block;
+      }
+
+      .required {
+          color: red;
+      }
+
+      button {
+        height: 30px;
+        width: 30px;
+        outline: none;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="buttonDiv">
+      <form class="inline">
+
+        <div>
+          <label for="first_name">First Name<span class="required">*</span></label>
+          <input id="first_name" type="text" required>
+        </div>
+
+        <div>
+          <label for="last_name">Last Name<span class="required">*</span></label>
+          <input id="last_name" type="text" required>
+        </div>
+        
+        <div>
+          <label for="email">Email Address<span class="required">*</span></label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div>
+          <label for="phone_number">Telephone Number<span class="required">*</span></label>
+          <input type="tel" id="phone_number" required>
+        </div>
+
+        <div>
+          <label for="linkedin_url">LinkedIn Profile</label>
+          <input type="url" id="linkedin_url">
+        </div>
+
+        <div>
+          <label for="website_url">Website</label>
+          <input type="url" id="website_url">
+        </div>
+
+        <div>
+          <label for="resume">Resume</label>
+          <input type="file" id="resume">
+        </div>
+
+        
+      </form>
+
+
+    </div>
+  </body>
+  <script src="options.js"></script>
+</html>
+
