@@ -1,10 +1,41 @@
 <script> 
 inputs = document.querySelectorAll('input');
 
-console.log(inputs);
+emails = getSpecifiedInput(inputs, ['text','email'], ['email']);
+phoneNumbers = getSpecifiedInput(inputs, ['text','tel'], ['telephone','cellphone','phone']);
+firstName = getSpecifiedInput(inputs, ['text'], ['firstname', 'first name', 'first', 'fname', 'first_name']);
+lastName = getSpecifiedInput(inputs, ['text'], ['lastname', 'last name', 'lname', 'last_name']);
+city = getSpecifiedInput(inputs, ['text'], ['city', 'location']);
+
+
+
+
+/*
+inputs: should be a list of inputs from the webpage
+types: list of input types you want to match
+names: list of input names you want to match
+*/
+function getSpecifiedInput(inputs, types, names)
+{ 
+    matchedInputs = [];
+    inputs.forEach(helper);
+
+    function helper(input){
+
+       if(types.includes(input.type)){
+            
+
+
+
+            if(names.includes((input.id).toLowerCase()) || names.includes(input.name.toLowerCase())){
+                matchedInputs.push(input);
+            }
+        }
+    }
+    return matchedInputs;
+}
 
 let emails = [];
-
 function getEmails(input) 
 { 
     if(input.type == 'email')
