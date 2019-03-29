@@ -47,5 +47,4 @@ function getEmails(input)
     }
 }
 
-// Call getEmails();
 inputs.forEach(getEmails);
