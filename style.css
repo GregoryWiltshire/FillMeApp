@@ -8,12 +8,12 @@ html, body {
     justify-content: center;
 }
 
-button {
+/*button {
     height: 30px;
     width: 30px;
     outline: none;
     margin: 10px;
-}
+}*/
 
 
 /* Classes */
@@ -28,7 +28,7 @@ button {
     height: auto;
     margin: 0 auto;
 }
-
+ 
 .card {
     background: #fff;
     border-radius: 20px 5px 20px 5px;
@@ -46,12 +46,12 @@ button {
 .form-group input,
 .form-group label {
     color: #ff3f14;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Lato', sans-serif;
     display: block;
 }
 
 .form-group input {
-    font-size: 24px;
+    font-size: 14px;
     font-weight: 500;
     width: 100%;
 }

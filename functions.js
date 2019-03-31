@@ -13,6 +13,11 @@ inputs: should be a list of inputs from the webpage
 types: list of input types you want to match
 names: list of input names you want to match
 */
+
+function getInputs(){
+    return document.querySelectorAll('input');
+}
+
 function getSpecifiedInput(inputs, types, names)
 { 
     matchedInputs = [];
