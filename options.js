@@ -13,9 +13,15 @@ function populateForms(){
   function fill(input){
     input.value =  '';
     var key = input.id;
-    chrome.storage.local.get(key, function(result) {changeInputValue(result[input.id])});
 
+    chrome.storage.local.get([key], function(result) {changeInputValue(result[key])});
+
+    // chrome.storage.local.get(key, function(result){
+    //   console.log(result)
+    //   changeInputValue(result)
+    // });
     
+
     function changeInputValue(str){
       if(typeof str !== "undefined") {
         input.value =  str;
@@ -28,47 +34,29 @@ function populateForms(){
 }
 
 
-
-
-// function storeKeyValue(key, value) {
-
-//   chrome.storage.local.set({key: value}, function() {});
-// }
-
-
-
-// function constructOptions(kButtonColors) {
-//   for (let item of kButtonColors) {
-//     let button = document.createElement('button');
-//     button.style.backgroundColor = item;
-//     button.addEventListener('click', function() {
-//       chrome.storage.sync.set({color: item}, function() {
-//         console.log('color is ' + item);
-//       })
-//     });
-//     page.appendChild(button);
-//   }
-// }
-// constructOptions(kButtonColors);
-
-
-
 function saveInputs(element) {
 
   inputs = getInputs();
 
   function store(input){
-    var val = input.value;
+    console.log('swig');
     var key = input.id;
+    var val = input.value;
     var obj = {[key]: val};
-    chrome.storage.local.set(obj);
+    chrome.storage.local.set(obj, function() {});
+    chrome.storage.local.get(input.id, function(result) {
+        console.log(result);
+      });
   }
   inputs.forEach(store);
-  
 };
 
 
 
-  window.onload = function() {
-    populateForms();
-  };
+  // window.onload = function() {
+  //   populateForms();
+  // };
+
+
+document.addEventListener('DOMContentLoaded', populateForms);
+document.getElementById("clickMe").onclick = saveInputs;
